@@ -10,6 +10,7 @@ soltani.wse@gmail.com
 '''
 
 from math import exp
+from scipy import integrate 
 
 def midpoint(f, a, b, n):
     h = float(b-a)/n
@@ -28,3 +29,8 @@ for i in range(1, 21):
     n = 2**i
     m = midpoint(g, a, b, n)
     print (n, m)
+    
+# 2-point Gauss integration    
+f = lambda x: x**8 + x**4 
+intf = integrate.quadrature(f, 0.0, 1.8) 
+print(intf)
